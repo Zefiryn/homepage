@@ -1,0 +1,22 @@
+{
+  "Header": {
+    "title": "Zefiryn",
+    "description": "Coding with Philosophy"
+  },
+  "HomePage": {
+    "bio": "Senior full-stack developer based in Kraków, Poland. I build e-commerce platforms and backend systems — mostly in the PHP and Magento ecosystem, with a growing focus on modern JavaScript and headless commerce. I've been doing this for 15+ years and still find the craft genuinely interesting. Away from code I have a PhD in Philosophy, which occasionally escapes into my writing.",
+    "title": "Artur Jewuła",
+    "description": "Welcome to our app",
+    "link-projects": "Projects",
+    "link-articles": "Articles",
+    "link-home": "Home"
+  },
+  "Projects": {
+    "title": "Projects",
+    "description": "Here are some of my projects."
+  },
+  "Articles": {
+    "title": "Articles",
+    "description": "Read my latest articles."
+  }
+}
