@@ -90,7 +90,7 @@ function SkillBar({
             </div>
             <div className="h-1 w-full rounded-full bg-skill-bar overflow-hidden">
                 <div
-                    className="h-full rounded-full bg-skill transition-all duration-700 ease-out"
+                    className="h-full rounded-full bg-skill dark:bg-skill-dark transition-all duration-700 ease-out"
                     style={{
                         width: animate ? `${pct}%` : "0%",
                         transitionDelay: `${index * 60 + 100}ms`,
