@@ -16,7 +16,7 @@ const posts: Post[] = [
     {
         title: "Mastering queue usage in Magento 2: handling application state changes",
         excerpt:
-            "Jak efektywnie wykorzystać kolejki w Magento 2 do obsługi zmian stanu aplikacji — praktyczny przewodnik po RabbitMQ i consumer architecture.",
+            "Learn how to handle long-running queue consumers in Magento 2 and avoid issues caused by outdated in-memory application states. This article explains how Magento queues work, the risks of stale configuration and cached data, and how poison pill mechanisms can safely restart consumers to keep integrations reliable and up to date.",
         source: "Hatimeria",
         readingTime: "10 min",
         date: "2024",
@@ -25,7 +25,7 @@ const posts: Post[] = [
     {
         title: "Bug: the masquerade",
         excerpt:
-            "Debugowanie to detektywistyczna robota. O tym, jak błędy ukrywają swoją prawdziwą naturę i jak je demaskować metodycznie.",
+            "What started as a seemingly random Magento bug turned into a deep investigation into race conditions, image processing, and hidden interactions between two independent modules. In this article, I walk through the debugging journey step by step — from misleading disk error clues to uncovering how concurrent image regeneration and WebP conversion caused intermittent failures in production, and how a small architectural fix ultimately solved the problem.",
         source: "Hatimeria",
         readingTime: "12 min",
         date: "2023",
@@ -34,7 +34,7 @@ const posts: Post[] = [
     {
         title: "The Taming of the Project",
         excerpt:
-            "Automatyzacja i oswajanie chaosu projektowego — narzędzia i nawyki, które pozwalają utrzymać kontrolę nad złożonymi wdrożeniami.",
+            "Follow the story behind HAT (Hatimeria Automation Toolkit) — a project created to solve the repetitive setup, deployment, and maintenance problems developers face every day. In this article, I share how I designed and built a flexible CLI tool that automates workflows across Magento, WordPress, Symfony, and Node.js projects, turning years of development experience into a practical toolkit used to speed up and simplify complex environments.",
         source: "Hatimeria",
         readingTime: "8 min",
         date: "2023",
@@ -43,7 +43,7 @@ const posts: Post[] = [
     {
         title: "Coding with philosophy",
         excerpt:
-            "Czy filozofia może być użyteczna dla programisty? O tym, jak myślenie Heideggera i Bubera zmienia sposób projektowania oprogramowania.",
+            "In this article, I explore how philosophical thinking can shape better software development practices. Drawing inspiration from classical philosophy and everyday engineering challenges, I reflect on how concepts like logic, ethics, abstraction, and critical thinking influence the way we design systems, solve problems, and write maintainable code beyond pure technical implementation.",
         source: "Medium",
         readingTime: "7 min",
         date: "2020",
@@ -52,7 +52,7 @@ const posts: Post[] = [
     {
         title: "The three metamorphoses",
         excerpt:
-            "Ścieżka kariery programisty przez pryzmat Nietzscheańskich metamorfoz — od wielbłąda przez lwa do dziecka.",
+            "This article uses Nietzsche’s concept of the three metamorphoses as a lens to reflect on growth in software development. It follows the transformation from the “camel” stage of carrying responsibility and learning fundamentals, through the “lion” stage of challenging constraints and questioning established patterns, to the “child” stage where creativity, simplicity, and genuine problem-solving take over. The piece connects philosophical evolution with a developer’s changing mindset over time in real-world engineering work.",
         source: "Medium",
         readingTime: "6 min",
         date: "2020",
@@ -146,3 +146,4 @@ export default function Blog() {
         </div>
     );
 }
+

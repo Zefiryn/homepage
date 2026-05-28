@@ -48,7 +48,7 @@ const projects: Project[] = [
             {label: "3D Printing", color: "amber"},
         ],
         externalUrl: "https://github.com/Zefiryn/Temperature_sensor",
-        images: ["/images/projects/weather-station.png", "images/projects/solar-mount-full.png", "/images/projects/weather-inside.png"],
+        images: ["/images/projects/weather-station.jpg", "/images/projects/weather-solar.jpg", "/images/projects/weather-inside.jpg"],
         imageAlt: "Weather Station interface and hardware",
         hasRepo: true
     },
@@ -270,3 +270,4 @@ export default function Projects() {
         </section>
     );
 }
+
