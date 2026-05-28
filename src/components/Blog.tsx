@@ -1,7 +1,6 @@
 "use client";
 
 import {useTranslations} from "next-intl";
-import type {Translator, IntlMessages} from "next-intl";
 import {useInView} from "@/hooks/useInView";
 
 type Post = {
@@ -61,7 +60,7 @@ const posts: Post[] = [
     },
 ];
 
-function PostCard({post, index, t}: { post: Post; index: number, t: Translator<IntlMessages, string> }) {
+function PostCard({post, index, t}: { post: Post; index: number, t: any }) {
     const {ref, inView} = useInView();
 
     return (
