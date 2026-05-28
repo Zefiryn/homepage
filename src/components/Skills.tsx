@@ -84,13 +84,13 @@ function SkillBar({
             }}
         >
             <div className="flex items-baseline justify-between mb-1 gap-2">
-                <span className="text-sm text-zinc-700 dark:text-zinc-300 leading-tight">{skill.name}</span>
+                <span className="text-sm text-basic leading-tight">{skill.name}</span>
                 <span
-                    className="text-xs tabular-nums text-zinc-800 dark:text-zinc-300 shrink-0">{skill.years} {t('years_' + (skill.years > 1 ? 'plural' : 'singular'))}</span>
+                    className="text-xs tabular-nums text-basic shrink-0">{skill.years} {t('years_' + (skill.years > 1 ? 'plural' : 'singular'))}</span>
             </div>
-            <div className="h-1 w-full rounded-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden">
+            <div className="h-1 w-full rounded-full bg-skill-bar overflow-hidden">
                 <div
-                    className="h-full rounded-full bg-sky-500 dark:bg-sky-400 transition-all duration-700 ease-out"
+                    className="h-full rounded-full bg-skill transition-all duration-700 ease-out"
                     style={{
                         width: animate ? `${pct}%` : "0%",
                         transitionDelay: `${index * 60 + 100}ms`,
@@ -104,7 +104,7 @@ function SkillBar({
 function SkillColumn({group, animate}: { group: SkillGroup; animate: boolean }) {
     return (
         <div>
-            <p className="text-xs font-medium tracking-widest uppercase text-zinc-700 dark:text-zinc-400 mb-4">
+            <p className="text-xs font-medium tracking-widest uppercase text-navigation mb-4">
                 {group.label}
             </p>
             <div className="space-y-3.5">
@@ -131,7 +131,7 @@ export default function Skills() {
                     transform: headingInView ? "translateY(0)" : "translateY(16px)",
                 }}
             >
-                <h2 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">{t('title')}</h2>
+                <h2 className="text-2xl font-medium text-dark">{t('title')}</h2>
             </div>
 
             <div ref={contentRef} className="grid gap-10 sm:grid-cols-2 mb-12">
@@ -148,12 +148,12 @@ export default function Skills() {
                     transitionDelay: "300ms"
                 }}
             >
-                <p className="text-xs font-medium tracking-widest uppercase text-zinc-800 dark:text-zinc-300 mb-3">{t('toolTags')}</p>
+                <p className="text-xs font-medium tracking-widest uppercase text-navigation mb-3">{t('toolTags')}</p>
                 <div className="flex flex-wrap gap-2">
                     {toolTags.map((tag) => (
                         <span
                             key={tag.name}
-                            className="text-xs px-2.5 py-1 rounded-full border border-zinc-700 dark:border-zinc-500 text-zinc-800 dark:text-zinc-300"
+                            className="text-xs px-2.5 py-1 rounded-full  text-basic bg-skill-bar"
                         >
                             {tag.name}
                         </span>

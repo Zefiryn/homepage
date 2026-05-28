@@ -37,7 +37,7 @@ export default async function RootLayout({
     <html
       className={`${geistSans.variable} ${geistMono.variable} ${audiowide.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-linear-to-br from-neutral-600 to-stone-800 bg-fixed">
+      <body className="min-h-full flex flex-col bg-linear-to-br from-gradient-start to-gradient-end bg-fixed text-dark">
         <NextIntlClientProvider messages={messages}>
           <div className="flex flex-col flex-1 items-center justify-center font-sans">
             <main className="flex flex-1 w-full max-w-4xl flex-col items-center justify-start pb-16 px-8 lg:pb-32 lg:px-16 sm:items-start">

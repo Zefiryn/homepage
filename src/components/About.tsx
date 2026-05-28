@@ -13,7 +13,7 @@ export default function Blog() {
         <div className="max-w-full text-justify">
             <div
                 ref={headingRef}
-                className="transition-all duration-700 ease-out"
+                className="transition-all duration-700 ease-out text-basic"
                 style={{
                     opacity: headingInView ? 1 : 0,
                     transform: headingInView ? "translateY(0)" : "translateY(16px)",

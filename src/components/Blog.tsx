@@ -1,6 +1,7 @@
 "use client";
 
 import {useTranslations} from "next-intl";
+import type {Translator, IntlMessages} from "next-intl";
 import {useInView} from "@/hooks/useInView";
 
 type Post = {
@@ -60,21 +61,8 @@ const posts: Post[] = [
     },
 ];
 
-const sourceStyles = {
-    Hatimeria: {
-        badge: "bg-zinc-100 text-zinc-600 ring-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-700",
-        dot: "bg-zinc-400",
-    },
-    Medium: {
-        badge: "bg-zinc-100 text-zinc-600 ring-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-700",
-        dot: "bg-zinc-400",
-    },
-};
-
-
-function PostCard({post, index}: { post: Post; index: number }) {
+function PostCard({post, index, t}: { post: Post; index: number, t: Translator<IntlMessages, string> }) {
     const {ref, inView} = useInView();
-    const styles = sourceStyles[post.source];
 
     return (
         <a
@@ -82,7 +70,7 @@ function PostCard({post, index}: { post: Post; index: number }) {
             href={post.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group block border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 hover:border-zinc-400 dark:hover:border-zinc-600 hover:shadow-sm transition-all duration-300"
+            className="group block border border-basic-mate-dark rounded-xl p-5 hover:border-navigation-hover hover:shadow-sm transition-all duration-300"
             style={{
                 opacity: inView ? 1 : 0,
                 transform: inView ? "translateY(0)" : "translateY(20px)",
@@ -90,23 +78,23 @@ function PostCard({post, index}: { post: Post; index: number }) {
             }}
         >
             <div className="flex items-start justify-between gap-3 mb-3">
-                <span className={`text-xs font-medium px-2 py-0.5 rounded-full ring-1 ${styles.badge}`}>{post.source}</span>
-                <div className="flex items-center gap-2 text-xs text-zinc-800 dark:text-zinc-400 shrink-0">
+                <span className={`text-xs font-medium px-2 py-0.5 rounded-full text-basic bg-skill-bar`}>{post.source}</span>
+                <div className="flex items-center gap-2 text-xs text-basic shrink-0">
                     <span>{post.date}</span> <span>·</span> <span>{post.readingTime} read</span>
                 </div>
             </div>
 
-            <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100 leading-snug mb-2 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors duration-200">
+            <h3 className="text-sm font-medium text-basic leading-snug mb-2 group-hover:text-navigation-hover transition-colors duration-200">
                 {post.title}
             </h3>
 
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+            <p className="text-sm text-basic leading-relaxed">
                 {post.excerpt}
             </p>
 
             <div
-                className="mt-4 flex items-center gap-1 text-xs font-medium text-zinc-400 dark:text-zinc-500 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors duration-200">
-                <span>Czytaj artykuł</span>
+                className="mt-4 flex items-center gap-1 text-xs font-medium text-basic group-hover:text-navigation-hover transition-colors duration-200">
+                <span>{t('read-article')}</span>
                 <svg
                     className="w-3 h-3 translate-x-0 group-hover:translate-x-0.5 transition-transform duration-200"
                     viewBox="0 0 12 12"
@@ -134,13 +122,13 @@ export default function Blog() {
                 style={{opacity: headingInView ? 1 : 0, transform: headingInView ? "translateY(0)" : "translateY(16px)"}}
             >
                 <div className="flex items-baseline justify-between gap-4 flex-wrap">
-                    <h2 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">{t('title')}</h2>
+                    <h2 className="text-2xl font-medium text-dark">{t('title')}</h2>
                 </div>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
                 {posts.map((post, index) => (
-                    <PostCard key={post.url} post={post} index={index}/>
+                    <PostCard key={post.url} post={post} index={index} t={t}/>
                 ))}
             </div>
         </div>

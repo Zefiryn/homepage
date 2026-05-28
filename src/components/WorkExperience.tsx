@@ -53,31 +53,13 @@ const jobs: Job[] = [
     },
 ];
 
-const accentMap = {
-    blue: {
-        dot: "bg-sky-500",
-        line: "border-sky-200 dark:border-sky-900",
-        tag: "bg-sky-50 text-sky-700 ring-sky-200 dark:bg-sky-950 dark:text-sky-300 dark:ring-sky-800",
-        period: "text-sky-600 dark:text-sky-400",
-    },
-    teal: {
-        dot: "bg-teal-500",
-        line: "border-teal-200 dark:border-teal-900",
-        tag: "bg-teal-50 text-teal-700 ring-teal-200 dark:bg-teal-950 dark:text-teal-300 dark:ring-teal-800",
-        period: "text-teal-600 dark:text-teal-400",
-    },
-    gray: {
-        dot: "bg-zinc-400",
-        line: "border-zinc-200 dark:border-zinc-700",
-        tag: "bg-zinc-100 text-zinc-600 ring-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-700",
-        period: "text-zinc-400 dark:text-zinc-500",
-    },
-};
-
 
 function JobCard({job, index}: { job: Job; index: number }) {
     const {ref, inView} = useInView();
-    const colors = accentMap[job.accent];
+    const colors =  {
+        dot: "bg-basic",
+        line: "border-basic-mate"
+    };
     const isLast = index === jobs.length - 1;
 
     return (
@@ -100,22 +82,22 @@ function JobCard({job, index}: { job: Job; index: number }) {
             <div className={`pb-12 ${isLast ? "pb-0" : ""} flex-1 min-w-0`}>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
                     <div>
-                        <span className="text-base font-medium text-zinc-900 dark:text-zinc-100">{job.title}</span>
-                        <span className="ml-2 text-sm text-zinc-500 dark:text-zinc-400">{job.company}</span>
+                        <span className="text-base font-medium text-dark">{job.title}</span>
+                        <span className="ml-2 text-sm text-basic">{job.company}</span>
                     </div>
-                    <span className={`text-sm font-medium tabular-nums ${colors.period}`}>{job.period}</span>
+                    <span className="text-sm font-medium tabular-nums text-basic">{job.period}</span>
                 </div>
 
                 <div className="flex flex-wrap gap-1.5 mb-3">
                     {job.tags.map((tag) => (
-                        <span key={tag} className={`text-xs px-2 py-0.5 rounded-full ring-1 font-medium ${colors.tag}`}>{tag}</span>
+                        <span key={tag} className={`text-xs px-2 py-0.5 rounded-full text-basic bg-skill-bar font-medium`}>{tag}</span>
                     ))}
                 </div>
 
                 <ul className="space-y-1.5">
                     {job.bullets.map((bullet, i) => (
-                        <li key={i} className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed flex gap-2">
-                            <span className="mt-2 w-1 h-1 rounded-full bg-zinc-300 dark:bg-zinc-600 shrink-0"/>
+                        <li key={i} className="text-sm text-basic leading-relaxed flex gap-2">
+                            <span className="mt-2 w-1 h-1 rounded-full bg-dark shrink-0"/>
                             {bullet}
                         </li>
                     ))}
@@ -139,7 +121,7 @@ export default function WorkExperience() {
                     transform: headingInView ? "translateY(0)" : "translateY(16px)",
                 }}
             >
-                <h2 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">{t('title')}</h2>
+                <h2 className="text-2xl font-medium text-dark">{t('title')}</h2>
             </div>
 
             <div>

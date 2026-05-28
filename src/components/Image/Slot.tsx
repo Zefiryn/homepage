@@ -24,7 +24,7 @@ export default function ImageSlot({images, imageAlt, onClick}: {
         return (
             <div
                 onClick={onClick}
-                className="relative w-full h-full min-h-52 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-700 cursor-zoom-in group"
+                className="relative w-full h-full min-h-52 rounded-xl overflow-hidden border border-pale cursor-zoom-in group"
             >
                 <Image
                     src={images[0]}
@@ -59,7 +59,7 @@ export default function ImageSlot({images, imageAlt, onClick}: {
                         key={i}
                         className={`
                             absolute inset-0 rounded-xl overflow-hidden min-h-52
-                            border-2 dark:border-zinc-200 border-zinc-700
+                            border-2 border-pale
                             transition-transform duration-300
                             ${isFront ? "group relative shadow-md hover:shadow-lg" : "shadow-sm"}
                         `}

@@ -8,14 +8,14 @@ export default function Navigation() {
     const t = useTranslations('Navigation');
 
     return (
-        <nav className="flex flex-row justify-end gap-3 w-full mb-6 text-olive-200 cursor-pointer">
+        <nav className="flex flex-row justify-end gap-3 w-full mb-6 text-navigation cursor-pointer">
             <Link href="#about"
-                  className={`after:inline-block after:ml-3 after:content-['::'] after:w-auto`}>{t('link-home')}</Link>
+                  className={`hover:text-navigation-hover after:text-navigation after:inline-block after:ml-3 after:content-['::'] after:w-auto`}>{t('link-home')}</Link>
             <Link href="#work-experience"
-                  className={`after:inline-block after:ml-3 after:content-['::'] after:w-auto`}>{t('link-experience')}</Link>
+                  className={`hover:text-navigation-hover after:text-navigation after:inline-block after:ml-3 after:content-['::'] after:w-auto`}>{t('link-experience')}</Link>
             <Link href="#projects"
-                  className={`after:inline-block after:ml-3 after:content-['::'] after:w-auto`}>{t('link-projects')}</Link>
-            <Link href="#articles">{t('link-articles')}</Link>
+                  className={`hover:text-navigation-hover after:text-navigation after:inline-block after:ml-3 after:content-['::'] after:w-auto`}>{t('link-projects')}</Link>
+            <Link href="#articles" className="hover:text-navigation-hover">{t('link-articles')}</Link>
         </nav>
     );
 }

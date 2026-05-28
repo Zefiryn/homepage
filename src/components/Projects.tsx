@@ -8,7 +8,6 @@ import ImageSlot from "@/components/Image/Slot";
 
 type ProjectTag = {
     label: string;
-    color: "sky" | "teal" | "amber" | "zinc";
 };
 
 type ProjectHighlight = {
@@ -41,11 +40,11 @@ const projects: Project[] = [
             {text: "3D model of the enclosure ready to print"},
         ],
         tags: [
-            {label: "C", color: "sky"},
-            {label: "Raspberry Pi Pico", color: "sky"},
-            {label: "E-ink", color: "teal"},
-            {label: "PCB Design", color: "amber"},
-            {label: "3D Printing", color: "amber"},
+            {label: "C"},
+            {label: "Raspberry Pi Pico"},
+            {label: "E-ink"},
+            {label: "PCB Design"},
+            {label: "3D Printing"},
         ],
         externalUrl: "https://github.com/Zefiryn/Temperature_sensor",
         images: ["/images/projects/weather-station.jpg", "/images/projects/weather-solar.jpg", "/images/projects/weather-inside.jpg"],
@@ -95,13 +94,6 @@ const projects: Project[] = [
     },
 ];
 
-const tagStyles: Record<ProjectTag["color"], string> = {
-    sky: "bg-sky-50 text-sky-700 ring-sky-200 dark:bg-sky-950 dark:text-sky-300 dark:ring-sky-800",
-    teal: "bg-teal-50 text-teal-700 ring-teal-200 dark:bg-teal-950 dark:text-teal-300 dark:ring-teal-800",
-    amber: "bg-amber-50 text-amber-700 ring-amber-200 dark:bg-amber-950 dark:text-amber-300 dark:ring-amber-800",
-    zinc: "bg-zinc-100 text-zinc-600 ring-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-700",
-};
-
 const typeIconPath: Record<Project["type"], string> = {
     software: "M6.5 3.5h9a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1v-13a1 1 0 0 1 1-1zm-3 3h-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h1M18.5 6.5h1a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1M9 7.5h6M9 10.5h6M9 13.5h4",
     hardware: "M9 3H7a2 2 0 0 0-2 2v2M9 3h6M9 3v2m6-2h2a2 2 0 0 1 2 2v2M15 3v2M3 9v6M21 9v6M9 21H7a2 2 0 0 1-2-2v-2m4 4h6m-6 0v-2m6 2h2a2 2 0 0 0 2-2v-2m-4 4v-2M3 9h2m14 0h2M3 15h2m14 0h2M9 9h6v6H9z",
@@ -123,15 +115,15 @@ function ProjectRow({project, index, onImageClick}: {
         <div className="flex flex-col gap-4 justify-center">
             <div className="flex items-start justify-between gap-3">
                 <div>
-                    <p className="text-xs font-medium tracking-wide uppercase text-zinc-400 dark:text-zinc-500 mb-1">
+                    <p className="text-xs font-medium tracking-wide uppercase text-basic-mate mb-1">
                         {project.category}
                     </p>
-                    <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-100">
+                    <h3 className="text-lg font-medium text-basic">
                         {project.title}
                     </h3>
                 </div>
                 <div
-                    className="shrink-0 w-9 h-9 rounded-lg border border-zinc-200 dark:border-zinc-700 flex items-center justify-center text-zinc-400 dark:text-zinc-500">
+                    className="shrink-0 w-9 h-9 rounded-lg border border-navigation text-basic flex items-center justify-center">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
                          strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
                         <path d={typeIconPath[project.type]}/>
@@ -139,16 +131,16 @@ function ProjectRow({project, index, onImageClick}: {
                 </div>
             </div>
 
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <p className="text-sm text-basic leading-relaxed">
                 {project.description}
             </p>
 
             <ul className="space-y-1.5">
                 {project.highlights.map((h, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+                    <li key={i} className="flex items-start gap-2 text-sm text-basic">
                         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"
                              strokeLinecap="round" strokeLinejoin="round"
-                             className="w-3.5 h-3.5 mt-0.5 shrink-0 text-teal-500" aria-hidden="true">
+                             className="w-3.5 h-3.5 mt-0.5 shrink-0 text-navigation-hover" aria-hidden="true">
                             <path d="M3 8l3.5 3.5L13 4"/>
                         </svg>
                         {h.text}
@@ -159,7 +151,7 @@ function ProjectRow({project, index, onImageClick}: {
             <div className="flex flex-wrap gap-1.5">
                 {project.tags.map((tag) => (
                     <span key={tag.label}
-                          className={`text-xs px-2 py-0.5 rounded-full ring-1 font-medium ${tagStyles[tag.color]}`}>{tag.label}</span>
+                          className={`text-xs px-2 py-0.5 rounded-full font-medium text-basic bg-skill-bar`}>{tag.label}</span>
                 ))}
             </div>
 
@@ -168,7 +160,7 @@ function ProjectRow({project, index, onImageClick}: {
                     href={project.externalUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group/link inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-200"
+                    className="group/link inline-flex items-center gap-1.5 text-xs font-medium text-basic hover:text-dark transition-colors duration-200"
                 >
                     {project.hasRepo &&
                     <svg viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
@@ -245,7 +237,7 @@ export default function Projects() {
                     transform: headingInView ? "translateY(0)" : "translateY(16px)",
                 }}
             >
-                <h2 className="text-2xl font-medium text-zinc-900 dark:text-zinc-100">{t('side-projects')}</h2>
+                <h2 className="text-2xl font-medium text-dark">{t('side-projects')}</h2>
             </div>
 
             <div className="flex flex-col gap-20">

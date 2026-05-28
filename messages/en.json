@@ -30,6 +30,7 @@
   },
   "Blog": {
     "title": "Articles",
-    "description": "Read my latest articles."
+    "description": "Read my latest articles.",
+    "read-article": "Read article"
   }
 }

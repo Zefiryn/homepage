@@ -101,7 +101,7 @@ export default function Gallery({images, alt, initialIndex, onClose}: GalleryOve
                             className={`
                                 relative shrink-0 w-14 h-10 rounded-md overflow-hidden border-2 transition-all duration-150
                                 ${i === current
-                                ? "border-white/80 opacity-100 scale-105"
+                                ? "border-navigation-hover opacity-100 scale-105"
                                 : "border-transparent opacity-40 hover:opacity-70"}
                             `}
                             aria-label={`Go to image ${i + 1}`}
