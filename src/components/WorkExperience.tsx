@@ -88,7 +88,7 @@ function JobCard({job, index}: { job: Job; index: number }) {
             <div className={`pb-12 ${isLast ? "pb-0" : ""} flex-1 min-w-0`}>
                 <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-3">
                     <div>
-                        <span className="text-base font-medium text-dark">{job.title}</span>
+                        <span className="text-base font-medium text-basic">{job.title}</span>
                         <span className="ml-2 text-sm text-basic">{job.company}</span>
                     </div>
                     <span className="text-sm font-medium tabular-nums text-basic">{job.period}</span>
