@@ -4,17 +4,44 @@ import {useTranslations} from 'next-intl';
 import Link from 'next/link';
 import {useEffect, useState} from 'react';
 
+const validSections = ['about', 'work-experience', 'projects', 'articles'];
 
 export default function Navigation() {
     const t = useTranslations('Navigation');
-    const [activeSection, setActiveSection] = useState<string>(() => {
-        if (typeof window !== 'undefined' && window.location.hash) {
-            return window.location.hash.replace('#', '');
-        }
-        return '';
-    });
+    const [activeSection, setActiveSection] = useState<string>('about');
+
+
 
     useEffect(() => {
+        // Handle initial load and "onload" hook logic
+        const handleInitialHash = () => {
+            if (window.location.hash) {
+                const hash = window.location.hash.replace('#', '');
+                if (validSections.includes(hash)) {
+                    setActiveSection(hash);
+                    return true;
+                }
+            }
+            return false;
+        };
+
+        let hasHash = handleInitialHash();
+        if (hasHash) {
+            setTimeout(() => {
+                hasHash = false;
+            }, 1000);
+        }
+
+        const onHashChange = () => {
+            handleInitialHash();
+            hasHash = true;
+            // After 1 second, allow scroll logic to take over again
+            setTimeout(() => {hasHash = false;}, 1000);
+        };
+
+        // Also listen for hash changes
+        window.addEventListener('hashchange', onHashChange);
+
         const observerOptions = {
             root: null,
             rootMargin: '-25% 0px -25% 0px',
@@ -34,8 +61,9 @@ export default function Navigation() {
 
             // Special handling for the very top of the page (About section)
             if (window.scrollY < 200) {
+                if (hasHash) return;
                 setActiveSection('about');
-                if (window.location.hash && window.location.hash !== '#about') {
+                if (window.location.hash === '#about') {
                     window.history.replaceState(null, '', window.location.pathname);
                 }
                 return;
@@ -48,7 +76,7 @@ export default function Navigation() {
             }
 
             if (intersectingSections.size > 0) {
-                // If multiple are intersecting, we want to pick the most "relevant" one.
+                // If multiple sections are intersecting, we want to pick the most "relevant" one.
                 // Since we are scrolling vertically, we can check their bounding rects
                 // and pick the one that is closest to the middle of the viewport
                 
@@ -73,8 +101,7 @@ export default function Navigation() {
 
         const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-        const sections = ['about', 'work-experience', 'projects', 'articles'];
-        sections.forEach((id) => {
+        validSections.forEach((id) => {
             const section = document.getElementById(id);
             if (section) {
                 observer.observe(section);
@@ -89,8 +116,9 @@ export default function Navigation() {
             }
 
             if (window.scrollY < 200) {
+                if (hasHash) return;
                 setActiveSection('about');
-                if (window.location.hash && window.location.hash !== '#about') {
+                if (window.location.hash === '#about') {
                     window.history.replaceState(null, '', window.location.pathname);
                 }
                 return;
@@ -100,8 +128,9 @@ export default function Navigation() {
         window.addEventListener('scroll', handleScroll);
 
         return () => {
+            window.removeEventListener('hashchange', onHashChange);
             window.removeEventListener('scroll', handleScroll);
-            sections.forEach((id) => {
+            validSections.forEach((id) => {
                 const section = document.getElementById(id);
                 if (section) {
                     observer.unobserve(section);
