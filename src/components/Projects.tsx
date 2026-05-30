@@ -20,7 +20,7 @@ type Project = {
     description: string;
     highlights: ProjectHighlight[];
     tags: ProjectTag[];
-    externalUrl: string;
+    externalUrl: string | null;
     type: "software" | "hardware" | "model3d";
     images: string[] | null;
     imageAlt: string | null;
@@ -28,6 +28,111 @@ type Project = {
 };
 
 const projects: Project[] = [
+    {
+        title: "The Rake",
+        category: "E-Commerce Platform",
+        type: "software",
+        description: "A luxury fashion e-commerce platform built for The Rake magazine, merging an editorial blog and an online store into a single seamless experience. The architecture combines Magento 2 and WordPress backends with a decoupled Vue.js frontend and a Node.js middleware layer.",
+        highlights: [
+            { text: "Decoupled PWA frontend migrated from React to Vue.js" },
+            { text: "Node.js middleware connecting Magento 2 and WordPress backends" },
+            { text: "Elasticsearch replacing Algolia — cutting avg. response time from ~900ms to ~300ms" },
+            { text: "50% conversion rate increase and 37% revenue growth post-launch" },
+        ],
+        tags: [
+            { label: "Vue.js" },
+            { label: "Node.js" },
+            { label: "Magento 2" },
+            { label: "WordPress" },
+            { label: "Elasticsearch" },
+            { label: "React" },
+            { label: "PWA" },
+        ],
+        externalUrl: null,
+        images: ["/images/projects/therake1.png", "/images/projects/therake2.png"],
+        imageAlt: "The Rake luxury e-commerce storefront",
+        hasRepo: false,
+    },
+    {
+        title: "Crypto ATM",
+        category: "R&D / Proof of Concept",
+        type: "software",
+        description: "An R&D project exploring physical ATM access to cryptocurrency wallets via the Waves blockchain platform. Extended an existing Java-based ATM server to support a new crypto currency, backed by a custom Node.js service handling deposit and withdrawal flows. Users can deposit physical cash, receive a printed QR code representing their digital wallet, and later withdraw funds by scanning the same QR code. Delivered as a working proof-of-concept alongside a security assessment and Waves API evaluation.",
+        highlights: [
+            { text: "Java ATM server extension to support new cryptocurrency transactions" },
+            { text: "Node.js microservice bridging the ATM and the Waves blockchain platform" },
+            { text: "MongoDB for transaction state and wallet session management" },
+            { text: "Full deposit and withdrawal flow with QR-code-based wallet access" },
+            { text: "Delivered with a security measures summary and Waves API feature report" },
+        ],
+        tags: [
+            { label: "Java" },
+            { label: "Node.js" },
+            { label: "MongoDB" },
+            { label: "Waves" },
+            { label: "Blockchain" },
+            { label: "Cryptocurrency" },
+        ],
+        externalUrl: null,
+        images: ["/images/projects/radix1.png", "/images/projects/radix2.png", "/images/projects/radix3.png","/images/projects/PayOut.jpeg"],
+        imageAlt: "Crypto ATM machine with QR code wallet interface",
+        hasRepo: false,
+    },
+    {
+        title: "Mekster",
+        category: "E-Commerce Platform",
+        type: "software",
+        description: "A feature-rich Magento 2 e-commerce platform for an automotive parts and tyre retailer, built on a Hyvä theme. Work spanned the full stack — from a deeply customised Algolia search integration with vehicle fitment filtering, to purchase order cost management.",
+        highlights: [
+            {text: "Algolia InstantSearch integration with vehicle fitment filtering, custom routing, Insights event forwarding, and a dedicated landing page"},
+            {text: "Car registration and garage-based tyre lookup with licence plate search and tyre size filtering on category pages"},
+            {text: "Purchase order cost tracking with invoice cost calculation, multi-currency support, and admin grid improvements"},
+            {text: "Performance optimisations: lazy-loading Algolia widgets by viewport, improved CLS on PDP, and a product ranking field based on margin"},
+            {text: "Hyvä frontend improvements: hero slider, recently viewed widget with wishlist and add-to-cart, frequently bought together component, and mobile UX fixes"},
+        ],
+        tags: [
+            {label: "Magento 2"},
+            {label: "PHP"},
+            {label: "Hyvä"},
+            {label: "Algolia"},
+            {label: "Alpine.js"},
+            {label: "TailwindCSS"},
+        ],
+        images: ["/images/projects/Mekster1.png", "/images/projects/Mekster2.png"],
+        imageAlt: "Mekster automotive e-commerce storefront with vehicle fitment search",
+        hasRepo: false,
+        externalUrl: null
+    },
+    {
+        title: "Mekonomen",
+        category: "E-Commerce Platform",
+        type: "software",
+        description: "A Magento 2 e-commerce platform for Mekonomen, a major Scandinavian automotive parts and workshop chain, built on a Hyvä theme ported from a sibling project. The platform serves multiple Nordic markets (Sweden, Norway) and integrates with Klarna for checkout, Algolia for search, and a network of physical workshop and store locations. A companion Laravel application handles the Click & Collect fulfilment flow — receiving orders from Magento, tracking in-store readiness, and dispatching email and SMS notifications to customers when their order is ready for pickup.",
+        highlights: [
+            {text: "Hyvä theme port and customisation: header, footer, mobile bottom menu, product page with car fitment modal, sticky add-to-cart, and 360° product image viewer via MagicToolbox"},
+            {text: "CRM integration: membership registration, member pricing, coupon/promotion redemption, and order sync with loyalty data"},
+            {text: "Algolia InstantSearch with campaign badges, vehicle fitment filtering, custom autocomplete with CMS-block initial state, and GA4/GTM event tracking"},
+            {text: "Click & Collect fulfilment via a dedicated Laravel service: order ingestion from Magento, store readiness tracking, and automated email and SMS notifications to customers" },
+            {text: "Workshop and store location pages with schema markup, service booking links, and map-based store search"},
+            {text: "Magento 2.4.6 upgrade with module updates, Zend-to-Laminas migration, and Varnish/cache improvements"},
+        ],
+        tags: [
+            {label: "Magento 2"},
+            {label: "PHP"},
+            {label: "Hyvä"},
+            {label: "Algolia"},
+            {label: "Alpine.js"},
+            {label: "TailwindCSS"},
+            {label: "GTM / GA4"},
+        ],
+        images: ["/images/projects/meko1.png", "/images/projects/meko2.png", "/images/projects/meko3.png"],
+        imageAlt: "Mekonomen automotive parts e-commerce storefront",
+        hasRepo: false,
+        externalUrl: null
+    },
+];
+
+const sideProjects: Project[] = [
     {
         title: "Weather Station",
         category: "Embedded / Hardware",
@@ -115,15 +220,10 @@ function ProjectRow({project, index, onImageClick}: {
         <div className="flex flex-col gap-4 justify-center">
             <div className="flex items-start justify-between gap-3">
                 <div>
-                    <p className="text-xs font-medium tracking-wide uppercase text-basic-mate mb-1">
-                        {project.category}
-                    </p>
-                    <h3 className="text-lg font-medium text-basic">
-                        {project.title}
-                    </h3>
+                    <p className="text-xs font-medium tracking-wide uppercase text-basic-mate mb-1">{project.category}</p>
+                    <h3 className="text-lg font-medium text-basic">{project.title}</h3>
                 </div>
-                <div
-                    className="shrink-0 w-9 h-9 rounded-lg border border-navigation text-basic flex items-center justify-center">
+                <div className="shrink-0 w-9 h-9 rounded-lg border border-navigation text-basic flex items-center justify-center">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
                          strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
                         <path d={typeIconPath[project.type]}/>
@@ -131,9 +231,7 @@ function ProjectRow({project, index, onImageClick}: {
                 </div>
             </div>
 
-            <p className="text-sm text-basic leading-relaxed">
-                {project.description}
-            </p>
+            <p className="text-sm text-basic leading-relaxed">{project.description}</p>
 
             <ul className="space-y-1.5">
                 {project.highlights.map((h, i) => (
@@ -151,11 +249,11 @@ function ProjectRow({project, index, onImageClick}: {
             <div className="flex flex-wrap gap-1.5">
                 {project.tags.map((tag) => (
                     <span key={tag.label}
-                          className={`text-xs px-2 py-0.5 rounded-full font-medium text-basic bg-skill-bar`}>{tag.label}</span>
+                          className={`text-xs px-2 py-0.5 rounded-full font-medium text-basic bg-skill-bar dark:bg-basic dark:text-gradient-start`}>{tag.label}</span>
                 ))}
             </div>
 
-            <div className="pt-1 border-t border-zinc-100 dark:border-zinc-800">
+            {project.externalUrl && <div className="pt-1 border-t border-zinc-100 dark:border-zinc-800">
                 <a
                     href={project.externalUrl}
                     target="_blank"
@@ -176,7 +274,7 @@ function ProjectRow({project, index, onImageClick}: {
                         <path d="M2.5 6h7M6.5 3l3 3-3 3"/>
                     </svg>
                 </a>
-            </div>
+            </div>}
         </div>
     );
 
@@ -237,13 +335,35 @@ export default function Projects() {
                     transform: headingInView ? "translateY(0)" : "translateY(16px)",
                 }}
             >
+                <h2 className="text-2xl font-medium text-dark">{t('commercial-projects')}</h2>
+            </div>
+
+            <div className="flex flex-col gap-20 mb-12">
+                {projects.map((project, index) => (
+                    <ProjectRow
+                        key={project.title}
+                        project={project}
+                        index={index}
+                        onImageClick={(images, alt) => setGallery({images, alt})}
+                    />
+                ))}
+            </div>
+
+            <div
+                ref={headingRef}
+                className="mb-12 transition-all duration-700 ease-out"
+                style={{
+                    opacity: headingInView ? 1 : 0,
+                    transform: headingInView ? "translateY(0)" : "translateY(16px)",
+                }}
+            >
                 <h2 className="text-2xl font-medium text-dark">{t('side-projects')}</h2>
             </div>
 
             <div className="flex flex-col gap-20">
-                {projects.map((project, index) => (
+                {sideProjects.map((project, index) => (
                     <ProjectRow
-                        key={project.externalUrl}
+                        key={project.title}
                         project={project}
                         index={index}
                         onImageClick={(images, alt) => setGallery({images, alt})}

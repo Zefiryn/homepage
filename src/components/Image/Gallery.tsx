@@ -30,7 +30,7 @@ export default function Gallery({images, alt, initialIndex, onClose}: GalleryOve
             onClick={onClose}
         >
             {/* Top bar */}
-            <div className="absolute top-0 inset-x-0 flex items-center justify-between px-4 py-3 pointer-events-none">
+            <div className="absolute top-0 inset-x-0 flex items-center justify-between px-4 py-3 pointer-events-none z-60">
                 <span className="text-white/50 text-sm tabular-nums">
                     {current + 1} / {images.length}
                 </span>

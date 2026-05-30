@@ -26,6 +26,5 @@ export default async function Home() {
                 <Blog />
             </section>
         </article>
-
     );
 }

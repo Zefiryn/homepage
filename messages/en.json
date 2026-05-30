@@ -24,6 +24,7 @@
   },
   "Projects": {
     "title": "Projects",
+    "commercial-projects": "Commercial projects",
     "side-projects": "Side projects & hobbies",
     "view-on-github": "View on GitHub",
     "view-on-external": "View project"
@@ -32,5 +33,10 @@
     "title": "Articles",
     "description": "Read my latest articles.",
     "read-article": "Read article"
+  },
+  "Footer": {
+    "tagline": "Coding with Philosophy",
+    "aria_label": "Contact links",
+    "built_with": "Built with Next.js & Tailwind CSS"
   }
 }
