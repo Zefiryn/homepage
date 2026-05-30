@@ -44,10 +44,8 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <div className="flex flex-col flex-1 items-center justify-center font-sans">
             <main className="flex flex-1 w-full flex-col items-center justify-start pb-16 lg:pb-32 sm:items-start">
-              <header className="max-w-4xl m-auto pt-12 pb-8 text-right w-full text-[2.5rem] font-audiowide flex flex-row justify-between">
-                <div
-                    className="h-25"
-                >
+              <header className="max-w-4xl m-auto pt-12 pb-8 text-right w-full text-3xl md:text-[2.5rem] font-audiowide flex flex-row justify-between">
+                <div className="h-25">
                   <Image
                       src="/images/artur.jpg"
                       alt="Artur"
