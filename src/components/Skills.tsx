@@ -122,7 +122,7 @@ export default function Skills() {
     const t = useTranslations('Skills');
 
     return (
-        <section id="skills" className="w-full">
+        <section className="w-full">
             <div
                 ref={headingRef}
                 className="mb-6 transition-all duration-700 ease-out"

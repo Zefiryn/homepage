@@ -82,11 +82,10 @@ const projects: Project[] = [
         title: "Mekster",
         category: "E-Commerce Platform",
         type: "software",
-        description: "A feature-rich Magento 2 e-commerce platform for an automotive parts and tyre retailer, built on a Hyvä theme. Work spanned the full stack — from a deeply customised Algolia search integration with vehicle fitment filtering, to purchase order cost management.",
+        description: "A feature-rich Magento 2 e-commerce platform for an automotive parts retailer, built on a Hyvä theme. Work spanned the full stack — from a deeply customised Algolia search integration with vehicle fitment filtering, to purchase order cost management.",
         highlights: [
             {text: "Algolia InstantSearch integration with vehicle fitment filtering, custom routing, Insights event forwarding, and a dedicated landing page"},
-            {text: "Car registration and garage-based tyre lookup with licence plate search and tyre size filtering on category pages"},
-            {text: "Purchase order cost tracking with invoice cost calculation, multi-currency support, and admin grid improvements"},
+            {text: "Car registration and garage-based tyre lookup with licence plate search for vehicle fitment search"},
             {text: "Performance optimisations: lazy-loading Algolia widgets by viewport, improved CLS on PDP, and a product ranking field based on margin"},
             {text: "Hyvä frontend improvements: hero slider, recently viewed widget with wishlist and add-to-cart, frequently bought together component, and mobile UX fixes"},
         ],
@@ -326,7 +325,7 @@ export default function Projects() {
     }, [gallery]);
 
     return (
-        <section id="projects" className="w-full">
+        <section className="w-full">
             <div
                 ref={headingRef}
                 className="mb-12 transition-all duration-700 ease-out"

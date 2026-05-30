@@ -33,7 +33,7 @@ const jobs: Job[] = [
         period: "2015 – 2018",
         tags: ["PHP", "Magento 1", "Magento 2", "MySQL"],
         bullets: [
-            "Served as the primary developer responsible for a live e-commerce store selling lighting products — owning feature development, bug fixes, and day-to-day platform health end-to-end.",
+            "Served as the primary developer responsible for a live e-commerce store selling lighting products — owning feature development, bug fixes, and deployments.",
             "Planned and executed a full platform migration from Magento 1 to Magento 2, including data mapping, custom module rewriting, and cutover strategy — a technically demanding upgrade that modernized the entire codebase.",
         ],
     },
@@ -44,7 +44,7 @@ const jobs: Job[] = [
         tags: ["PHP", "Magento", "Ruby on Rails"],
         bullets: [
             "Maintained and extended multiple Magento-based e-commerce sites, handling a diverse client portfolio with varying business requirements, custom extensions, and third-party integrations.",
-            "Developed Ruby on Rails applications for a Canadian rail operator's ticket sales platform — gaining cross-language experience and exposure to transactional, booking-flow systems with real-time availability constraints.",
+            "Developed Ruby on Rails applications for a Canadian rail operator's ticket sales platform.",
         ],
     },
     {
@@ -53,8 +53,8 @@ const jobs: Job[] = [
         period: "2009 – 2011",
         tags: ["PHP", "CSS", "Zend", "knockout.js"],
         bullets: [
-            "Built and launched a submission management platform for an international design competition spanning 4 countries, processing around 300 entries per year. The application remained in active production use for 4 years — a strong signal of reliability and long-term fit to the client's operational needs.",
-            "Developed Ruby on Rails applications for a Canadian rail operator's ticket sales platform — gaining cross-language experience and exposure to transactional, booking-flow systems with real-time availability constraints.",
+            "Built and launched a submission management platform for an international design competition spanning 4 countries, processing around 300 entries per year. The application remained in active production use for 4 years.",
+            "Created a small webapp for managing sidecar.xml from Adobe Digital Publishing Suite for small publishing company."
         ],
     }
 ]
@@ -118,7 +118,7 @@ export default function WorkExperience() {
     const t = useTranslations('WorkExperience');
 
     return (
-        <div id="experience" className="max-w-full">
+        <div className="max-w-full">
             <div
                 ref={headingRef}
                 className="mb-14 transition-all duration-700 ease-out"

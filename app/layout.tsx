@@ -43,7 +43,10 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <div className="flex flex-col flex-1 items-center justify-center font-sans">
             <main className="flex flex-1 w-full max-w-4xl flex-col items-center justify-start pb-16 px-8 lg:pb-32 lg:px-16 sm:items-start">
-              <header className="pt-32 pb-8 text-right w-full text-4xl font-audiowide">{t('page_title')}</header>
+              <header className="pt-20 pb-8 text-right w-full text-[2.5rem] font-audiowide">
+                {t('page_title')}
+                <span className="text-basic text-xl block">{t('page_title_description')}</span>
+              </header>
               <Navigation />
               {children}
             </main>

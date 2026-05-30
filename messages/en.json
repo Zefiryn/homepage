@@ -2,13 +2,14 @@
   "Header": {
     "title": "Zefiryn",
     "page_title": "Artur Jewuła",
+    "page_title_description": "Full-Stack Developer",
     "description": "Coding with Philosophy"
   },
   "About": {
-    "bio": "I've been building e-commerce systems for 15 years — Magento, Laravel, GraphQL, the works — and I still find the problems genuinely interesting. Not just \"it ships\" interesting, but \"why did that query take 6 hours and how do we get it to 30 minutes\" interesting.\nI also have a PhD in Philosophy, which sounds like a non-sequitur until you realise that most hard engineering problems are really just problems of clarity — what are we actually trying to do here, and what's getting in the way. It shapes how I work and how I write about it.\nAway from work I build hardware — Raspberry Pi firmware, custom PCBs, the occasional 3D-printed enclosure. It's a different kind of problem-solving, and I find it keeps me honest about complexity.\nI'm based in Kraków, currently looking for my next role, and happy to talk."
+    "bio": "I am a Senior Full-Stack Developer with over 15 years of experience building high-performance web applications and complex e-commerce ecosystems. My core expertise lies in bridging backend complexity with modern, lightning-fast frontends—whether that means architecting decoupled setups or launching sleek storefronts using Hyvä and Magento.\nOver the past few years, my commercial work has focused on driving architectural decisions for major Scandinavian and international brands, optimizing databases handling tens of millions of records and creating new features for the B2C ecommerce store. I was also a part of two person team that built an fully-functional ecommerce platform using Vue.js, node.js, Elasticsearch, Magento, and Wordpress which was used by 4 stores.\nWhen I step away from commercial PHP and Node.js code, I still love to build. My hobby projects are where software meets hardware: I design custom PCBs, program microcontrollers like solar-powered e-ink weather stations, and tinker with FreeCAD and 3D printing to customize mechanical keyboards."
   },
   "Navigation": {
-    "link-experience": "Work Experience",
+    "link-experience": "Experience",
     "link-projects": "Projects",
     "link-articles": "Articles",
     "link-home": "About"
