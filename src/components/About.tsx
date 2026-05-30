@@ -3,9 +3,7 @@
 import {useTranslations} from "next-intl";
 import {useInView} from "@/hooks/useInView";
 
-
-
-export default function Blog() {
+export default function About() {
     const {ref: headingRef, inView: headingInView} = useInView(0.3);
     const t = useTranslations('About');
 
