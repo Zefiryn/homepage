@@ -147,19 +147,35 @@ export default function Navigation() {
         return `${baseClass} ${activeClass}`;
     };
 
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        const hash = href.includes('#') ? href.split('#')[1] : '';
+        if (hash) {
+            e.preventDefault();
+            window.history.replaceState(null, '', `/#${hash}`);
+            const element = document.getElementById(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+            // Trigger the hashchange logic manually since replaceState doesn't trigger it
+            if (validSections.includes(hash)) {
+                setActiveSection(hash);
+            }
+        }
+    };
+
     return (
         <nav className="sticky top-0 z-50 backdrop-blur-md border-b border-footer w-full mb-6">
             <div className="max-w-4xl m-auto flex flex-row justify-end gap-1 md:gap-3 w-full  cursor-pointer text-sm md:text-base py-4">
-                <Link href="/#about" replace className={getLinkClassName("/#about")}>
+                <Link href="/#about" onClick={(e) => handleLinkClick(e, "/#about")} className={getLinkClassName("/#about")}>
                     {t('link-home')}
                 </Link>
-                <Link href="/#work-experience" replace className={getLinkClassName("/#work-experience")}>
+                <Link href="/#work-experience" onClick={(e) => handleLinkClick(e, "/#work-experience")} className={getLinkClassName("/#work-experience")}>
                     {t('link-experience')}
                 </Link>
-                <Link href="/#projects" replace className={getLinkClassName("/#projects")}>
+                <Link href="/#projects" onClick={(e) => handleLinkClick(e, "/#projects")} className={getLinkClassName("/#projects")}>
                     {t('link-projects')}
                 </Link>
-                <Link href="/#articles" replace className={getLinkClassName("/#articles")}>
+                <Link href="/#articles" onClick={(e) => handleLinkClick(e, "/#articles")} className={getLinkClassName("/#articles")}>
                     {t('link-articles')}
                 </Link>
             </div>
