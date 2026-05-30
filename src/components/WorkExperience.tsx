@@ -121,7 +121,7 @@ export default function WorkExperience() {
         <div className="max-w-full">
             <div
                 ref={headingRef}
-                className="mb-14 transition-all duration-700 ease-out"
+                className="mb-8 transition-all duration-700 ease-out"
                 style={{
                     opacity: headingInView ? 1 : 0,
                     transform: headingInView ? "translateY(0)" : "translateY(16px)",

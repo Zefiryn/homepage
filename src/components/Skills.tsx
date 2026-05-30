@@ -125,7 +125,7 @@ export default function Skills() {
         <section className="w-full">
             <div
                 ref={headingRef}
-                className="mb-6 transition-all duration-700 ease-out"
+                className="mb-8 transition-all duration-700 ease-out"
                 style={{
                     opacity: headingInView ? 1 : 0,
                     transform: headingInView ? "translateY(0)" : "translateY(16px)",

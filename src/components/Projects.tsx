@@ -57,7 +57,7 @@ const projects: Project[] = [
         title: "Crypto ATM",
         category: "R&D / Proof of Concept",
         type: "software",
-        description: "An R&D project exploring physical ATM access to cryptocurrency wallets via the Waves blockchain platform. Extended an existing Java-based ATM server to support a new crypto currency, backed by a custom Node.js service handling deposit and withdrawal flows. Users can deposit physical cash, receive a printed QR code representing their digital wallet, and later withdraw funds by scanning the same QR code. Delivered as a working proof-of-concept alongside a security assessment and Waves API evaluation.",
+        description: "An R&D project exploring physical ATM access to cryptocurrency wallets via a blockchain platform. I extended an existing Java-based ATM server to support a new crypto currency, backed by a custom Node.js service handling deposit and withdrawal flows. Users can deposit physical cash, receive a printed QR code representing their digital wallet, and later withdraw funds by scanning the same QR code. Delivered as a working proof-of-concept alongside a security assessment and API evaluation.",
         highlights: [
             { text: "Java ATM server extension to support new cryptocurrency transactions" },
             { text: "Node.js microservice bridging the ATM and the Waves blockchain platform" },
@@ -136,7 +136,7 @@ const sideProjects: Project[] = [
         title: "Weather Station",
         category: "Embedded / Hardware",
         type: "hardware",
-        description: "A standalone weather monitoring station built on Raspberry Pi Pico. Measures temperature, humidity, and atmospheric pressure in real time, displaying readings on an e-ink screen. Designed as a fully self-contained device — the project includes custom PCB schematics and a 3D-printed enclosure model. It utilises solar panel as a source of energy for the internal rechargable battery",
+        description: "A standalone weather monitoring station built on Raspberry Pi Pico. It is capable of measuring temperature, humidity, and atmospheric pressure in real time and displaying the readings on an e-ink screen. Designed as a fully self-contained device, the project includes custom PCB schematics and a 3D-printed enclosure model. It utilises solar panel as a source of energy for the internal rechargeable battery",
         highlights: [
             {text: "Runs on Raspberry Pi Pico (Code in C)"},
             {text: "E-ink display for low power consumption"},
@@ -316,6 +316,7 @@ function ProjectRow({project, index, onImageClick}: {
 
 export default function Projects() {
     const {ref: headingRef, inView: headingInView} = useInView(0.3);
+    const {ref: sideHeadingRef, inView: sideHeadingInView} = useInView(0.3);
     const t = useTranslations('Projects');
     const [gallery, setGallery] = useState<{ images: string[]; alt: string | null } | null>(null);
 
@@ -328,7 +329,7 @@ export default function Projects() {
         <section className="w-full">
             <div
                 ref={headingRef}
-                className="mb-12 transition-all duration-700 ease-out"
+                className="mb-8 transition-all duration-700 ease-out"
                 style={{
                     opacity: headingInView ? 1 : 0,
                     transform: headingInView ? "translateY(0)" : "translateY(16px)",
@@ -349,11 +350,11 @@ export default function Projects() {
             </div>
 
             <div
-                ref={headingRef}
-                className="mb-12 transition-all duration-700 ease-out"
+                ref={sideHeadingRef}
+                className="mb-8 transition-all duration-700 ease-out"
                 style={{
-                    opacity: headingInView ? 1 : 0,
-                    transform: headingInView ? "translateY(0)" : "translateY(16px)",
+                    opacity: sideHeadingInView ? 1 : 0,
+                    transform: sideHeadingInView ? "translateY(0)" : "translateY(16px)",
                 }}
             >
                 <h2 className="text-2xl font-medium text-dark">{t('side-projects')}</h2>

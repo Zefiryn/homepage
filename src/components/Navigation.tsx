@@ -107,19 +107,21 @@ export default function Navigation() {
     };
 
     return (
-        <nav className="sticky top-0 z-50 backdrop-blur-md border-b border-footer flex flex-row justify-end gap-1 md:gap-3 w-full mb-6 cursor-pointer text-sm md:text-base py-4 px-4">
-            <Link href="#about" className={getLinkClassName("#about")}>
-                {t('link-home')}
-            </Link>
-            <Link href="#work-experience" className={getLinkClassName("#work-experience")}>
-                {t('link-experience')}
-            </Link>
-            <Link href="#projects" className={getLinkClassName("#projects")}>
-                {t('link-projects')}
-            </Link>
-            <Link href="#articles" className={getLinkClassName("#articles")}>
-                {t('link-articles')}
-            </Link>
+        <nav className="sticky top-0 z-50 backdrop-blur-md border-b border-footer w-full mb-6">
+            <div className="max-w-4xl m-auto flex flex-row justify-end gap-1 md:gap-3 w-full  cursor-pointer text-sm md:text-base py-4">
+                <Link href="#about" className={getLinkClassName("#about")}>
+                    {t('link-home')}
+                </Link>
+                <Link href="#work-experience" className={getLinkClassName("#work-experience")}>
+                    {t('link-experience')}
+                </Link>
+                <Link href="#projects" className={getLinkClassName("#projects")}>
+                    {t('link-projects')}
+                </Link>
+                <Link href="#articles" className={getLinkClassName("#articles")}>
+                    {t('link-articles')}
+                </Link>
+            </div>
         </nav>
     );
 }

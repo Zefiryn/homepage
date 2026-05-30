@@ -11,18 +11,18 @@ export default async function Home() {
     const a = await getTranslations('Articles');
 
     return (
-        <article className="flex flex-col gap-24">
-            <section id="about" className="flex flex-col items-center justify-center">
+        <article className="flex flex-col gap-16">
+            <section id="about" className="flex flex-col items-center justify-center pt-4">
                 <About />
             </section>
-            <section id="work-experience" className="flex flex-col items-center justify-center gap-12">
+            <section id="work-experience" className="flex flex-col items-center justify-center gap-12 pt-4">
                 <Skills />
                 <WorkExperience />
             </section>
-            <section id="projects" className="flex flex-col items-center justify-center">
+            <section id="projects" className="flex flex-col items-center justify-center pt-4">
                 <Projects />
             </section>
-            <section id="articles" className="flex flex-col items-center justify-center">
+            <section id="articles" className="flex flex-col items-center justify-center pt-4">
                 <Blog />
             </section>
         </article>

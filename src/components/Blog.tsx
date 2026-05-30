@@ -34,7 +34,7 @@ const posts: Post[] = [
     {
         title: "The Taming of the Project",
         excerpt:
-            "Follow the story behind HAT (Hatimeria Automation Toolkit) — a project created to solve the repetitive setup, deployment, and maintenance problems developers face every day. In this article, I share how I designed and built a flexible CLI tool that automates workflows across Magento, WordPress, Symfony, and Node.js projects, turning years of development experience into a practical toolkit used to speed up and simplify complex environments.",
+            "Follow the story behind HAT (Hatimeria Automation Toolkit) — a project created to solve the repetitive setup, deployment, and maintenance problems developers face on a daily basis. In this article, I share how I designed and built a flexible CLI tool that automates workflows across Magento, WordPress, Symfony, and Node.js projects, turning years of development experience into a practical toolkit used to speed up and simplify complex environments.",
         source: "Hatimeria",
         readingTime: "8 min",
         date: "2023",
@@ -43,7 +43,7 @@ const posts: Post[] = [
     {
         title: "Coding with philosophy",
         excerpt:
-            "In this article, I explore how philosophical thinking can shape better software development practices. Drawing inspiration from classical philosophy and everyday engineering challenges, I reflect on how concepts like logic, ethics, abstraction, and critical thinking influence the way we design systems, solve problems, and write maintainable code beyond pure technical implementation.",
+            "In this article, I explore how philosophical thinking can shape better software development practices. Drawing inspiration from classical philosophy and everyday engineering challenges, I reflect on how concepts like logic, abstraction, and critical thinking influence the way we design systems, solve problems, and write maintainable code beyond pure technical implementation.",
         source: "Medium",
         readingTime: "7 min",
         date: "2020",
@@ -52,7 +52,7 @@ const posts: Post[] = [
     {
         title: "The three metamorphoses",
         excerpt:
-            "This article uses Nietzsche’s concept of the three metamorphoses as a lens to reflect on growth in software development. It follows the transformation from the “camel” stage of carrying responsibility and learning fundamentals, through the “lion” stage of challenging constraints and questioning established patterns, to the “child” stage where creativity, simplicity, and genuine problem-solving take over. The piece connects philosophical evolution with a developer’s changing mindset over time in real-world engineering work.",
+            "This article uses Nietzsche’s concept of the three metamorphoses as a lens to reflect on the growth in software development. It follows the transformation from the “camel” stage of carrying responsibility and learning fundamentals through the “lion” stage of challenging constraints and questioning established patterns, to the “child” stage where creativity, simplicity, and genuine problem-solving take over. The piece connects philosophical evolution with a developer’s changing mindset over time in real-world engineering work.",
         source: "Medium",
         readingTime: "6 min",
         date: "2020",
@@ -117,7 +117,7 @@ export default function Blog() {
         <div className="max-w-full">
             <div
                 ref={headingRef}
-                className="mb-12 transition-all duration-700 ease-out"
+                className="mb-8 transition-all duration-700 ease-out"
                 style={{opacity: headingInView ? 1 : 0, transform: headingInView ? "translateY(0)" : "translateY(16px)"}}
             >
                 <div className="flex items-baseline justify-between gap-4 flex-wrap">
