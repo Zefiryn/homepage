@@ -7,7 +7,12 @@ import {useEffect, useState} from 'react';
 
 export default function Navigation() {
     const t = useTranslations('Navigation');
-    const [activeSection, setActiveSection] = useState<string>('');
+    const [activeSection, setActiveSection] = useState<string>(() => {
+        if (typeof window !== 'undefined' && window.location.hash) {
+            return window.location.hash.replace('#', '');
+        }
+        return '';
+    });
 
     useEffect(() => {
         const observerOptions = {
@@ -30,6 +35,9 @@ export default function Navigation() {
             // Special handling for the very top of the page (About section)
             if (window.scrollY < 200) {
                 setActiveSection('about');
+                if (window.location.hash && window.location.hash !== '#about') {
+                    window.history.replaceState(null, '', window.location.pathname);
+                }
                 return;
             }
 
@@ -82,6 +90,9 @@ export default function Navigation() {
 
             if (window.scrollY < 200) {
                 setActiveSection('about');
+                if (window.location.hash && window.location.hash !== '#about') {
+                    window.history.replaceState(null, '', window.location.pathname);
+                }
                 return;
             }
         };
@@ -101,7 +112,8 @@ export default function Navigation() {
 
     const getLinkClassName = (href: string) => {
         const baseClass = "hover:text-navigation-hover transition-colors px-3 py-1";
-        const activeClass = activeSection === href.replace('#', '') ? "px-2.5 py-1 rounded-full  text-basic bg-skill-bar" : "text-navigation";
+        const sectionId = href.includes('#') ? href.split('#')[1] : '';
+        const activeClass = activeSection === sectionId ? "px-2.5 py-1 rounded-full  text-basic bg-skill-bar" : "text-navigation";
         
         return `${baseClass} ${activeClass}`;
     };
@@ -109,16 +121,16 @@ export default function Navigation() {
     return (
         <nav className="sticky top-0 z-50 backdrop-blur-md border-b border-footer w-full mb-6">
             <div className="max-w-4xl m-auto flex flex-row justify-end gap-1 md:gap-3 w-full  cursor-pointer text-sm md:text-base py-4">
-                <Link href="#about" className={getLinkClassName("#about")}>
+                <Link href="/#about" replace className={getLinkClassName("/#about")}>
                     {t('link-home')}
                 </Link>
-                <Link href="#work-experience" className={getLinkClassName("#work-experience")}>
+                <Link href="/#work-experience" replace className={getLinkClassName("/#work-experience")}>
                     {t('link-experience')}
                 </Link>
-                <Link href="#projects" className={getLinkClassName("#projects")}>
+                <Link href="/#projects" replace className={getLinkClassName("/#projects")}>
                     {t('link-projects')}
                 </Link>
-                <Link href="#articles" className={getLinkClassName("#articles")}>
+                <Link href="/#articles" replace className={getLinkClassName("/#articles")}>
                     {t('link-articles')}
                 </Link>
             </div>
