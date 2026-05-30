@@ -4,8 +4,8 @@ import { useTranslations } from "next-intl";
 const links = [
   {
     key: "email",
-    label: "artur@jewula.net",
-    href: "mailto:artur@jewula.net",
+    label: "dev@jewula.net",
+    href: "mailto:dev@jewula.net",
     icon: (
       <svg
         viewBox="0 0 24 24"
