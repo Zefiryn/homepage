@@ -60,16 +60,15 @@ const projects: Project[] = [
         description: "An R&D project exploring physical ATM access to cryptocurrency wallets via a blockchain platform. I extended an existing Java-based ATM server to support a new crypto currency, backed by a custom Node.js service handling deposit and withdrawal flows. Users can deposit physical cash, receive a printed QR code representing their digital wallet, and later withdraw funds by scanning the same QR code. Delivered as a working proof-of-concept alongside a security assessment and API evaluation.",
         highlights: [
             { text: "Java ATM server extension to support new cryptocurrency transactions" },
-            { text: "Node.js microservice bridging the ATM and the Waves blockchain platform" },
+            { text: "Node.js microservice bridging the ATM and the blockchain platform" },
             { text: "MongoDB for transaction state and wallet session management" },
             { text: "Full deposit and withdrawal flow with QR-code-based wallet access" },
-            { text: "Delivered with a security measures summary and Waves API feature report" },
+            { text: "Delivered with a security measures summary and API feature report" },
         ],
         tags: [
             { label: "Java" },
             { label: "Node.js" },
             { label: "MongoDB" },
-            { label: "Waves" },
             { label: "Blockchain" },
             { label: "Cryptocurrency" },
         ],
