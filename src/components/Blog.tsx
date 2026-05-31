@@ -15,11 +15,19 @@ type Post = {
 const posts: Post[] = [
     {
         title: "The Rake case study",
-        excerpt: "A case study of our collaboration with The Rake — a globally recognized luxury fashion and lifestyle platform. We designed and implemented a scalable architecture that seamlessly integrates eCommerce and editorial coe.ntent, improving performance, simplifying content management, and supporting future growth. Discover how thoughtful architectural decisions and modern technology helped deliver a premium digital experience for a global luxury audienc\n",
+        excerpt: "A case study of our collaboration with The Rake — a globally recognized luxury fashion and lifestyle platform. We designed and implemented a scalable architecture that seamlessly integrates eCommerce and editorial coe.ntent, improving performance, simplifying content management, and supporting future growth. Discover how thoughtful architectural decisions and modern technology helped deliver a premium digital experience for a global luxury audienc",
         source: "Hatimeria",
         readingTime: "8 min",
         date: "2020",
         url: "https://www.hatimeria.com/our-work/the-rake",
+    },
+    {
+        title: "Apple Pay - a way to increase your sales",
+        excerpt: "How do you turn a luxury shopping experience into a seamless one-tap purchase? We did it with adding Apple Pay into the store. It created a faster, smoother checkout experience. The result is a story about reducing friction, improving conversions, and rethinking how premium customers complete their purchases.",
+        source: "Hatimeria",
+        readingTime: "7 min",
+        date: "2022",
+        url: "https://www.hatimeria.com/our-work/apple-pay",
     },
     {
         title: "Mastering queue usage in Magento 2: handling application state changes",
