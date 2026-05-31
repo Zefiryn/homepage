@@ -164,7 +164,7 @@ export default function Navigation() {
     };
 
     return (
-        <nav className="sticky top-0 z-50 backdrop-blur-md border-b border-footer w-full mb-6">
+        <nav className="sticky top-0 z-50 backdrop-blur-md border-b border-footer mb-6 w-[calc(100%+2rem)] -ml-4">
             <div className="max-w-4xl m-auto flex flex-row justify-end gap-1 md:gap-3 w-full  cursor-pointer text-sm md:text-base py-4">
                 <Link href="/#about" onClick={(e) => handleLinkClick(e, "/#about")} className={getLinkClassName("/#about")}>
                     {t('link-home')}
