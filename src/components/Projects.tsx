@@ -87,6 +87,7 @@ const projects: Project[] = [
             {text: "Car registration and garage-based tyre lookup with licence plate search for vehicle fitment search"},
             {text: "Performance optimisations: lazy-loading Algolia widgets by viewport, improved CLS on PDP, and a product ranking field based on margin"},
             {text: "Hyvä frontend improvements: hero slider, recently viewed widget with wishlist and add-to-cart, frequently bought together component, and mobile UX fixes"},
+            {text: "360° product image viewer via MagicToolbox and images imported from Tecdoc API"},
             {text: "Export generation optimization: 18M records, exports of hundreds thousand rows reduced from 6-8h to 30-50min"},
             {text: "Integration with Tecdoc API for data enrichment"},
         ],
@@ -101,7 +102,7 @@ const projects: Project[] = [
             {label: "API integration"},
             {label: "MongoDB"},
         ],
-        images: ["/images/projects/Mekster1.png", "/images/projects/Mekster2.png"],
+        images: ["/images/projects/Mekster1.png", "/images/projects/Mekster2.png", "/images/projects/Mekster3.png"],
         imageAlt: "Mekster automotive e-commerce storefront with vehicle fitment search",
         hasRepo: false,
         externalUrl: null
@@ -110,9 +111,8 @@ const projects: Project[] = [
         title: "Mekonomen",
         category: "E-Commerce Platform",
         type: "software",
-        description: "A Magento 2 e-commerce platform for Mekonomen, a major Scandinavian automotive parts and workshop chain, built on a Hyvä theme ported from a sibling project. The platform serves multiple Nordic markets (Sweden, Norway) and integrates with Klarna for checkout, Algolia for search, and a network of physical workshop and store locations. A companion Laravel application handles the Click & Collect fulfilment flow — receiving orders from Magento, tracking in-store readiness, and dispatching email and SMS notifications to customers when their order is ready for pickup.",
+        description: "A Magento 2 e-commerce platform for Mekonomen, a major Scandinavian automotive parts and workshop chain, built on a Hyvä. The platform serves multiple Nordic markets (Sweden, Norway) and integrates with Klarna for checkout, Algolia for search, and a network of physical workshop and store locations. A companion Laravel application handles the Click & Collect fulfilment flow — receiving orders from Magento, tracking in-store readiness, and dispatching email and SMS notifications to customers when their order is ready for pickup.",
         highlights: [
-            {text: "Hyvä theme port and customisation: header, footer, mobile bottom menu, product page with car fitment modal, sticky add-to-cart, and 360° product image viewer via MagicToolbox"},
             {text: "CRM integration: membership registration, member pricing, coupon/promotion redemption, and order sync with loyalty data"},
             {text: "Algolia InstantSearch with campaign badges, vehicle fitment filtering, custom autocomplete with CMS-block initial state, and GA4/GTM event tracking"},
             {text: "Click & Collect fulfilment via a dedicated Laravel service: order ingestion from Magento, store readiness tracking, and automated email and SMS notifications to customers" },
