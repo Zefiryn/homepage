@@ -87,7 +87,7 @@ const projects: Project[] = [
             {text: "Car registration and garage-based tyre lookup with licence plate search for vehicle fitment search"},
             {text: "Performance optimisations: lazy-loading Algolia widgets by viewport, improved CLS on PDP, and a product ranking field based on margin"},
             {text: "Hyvä frontend improvements: hero slider, recently viewed widget with wishlist and add-to-cart, frequently bought together component, and mobile UX fixes"},
-            {text: "360° product image viewer via MagicToolbox and images imported from Tecdoc API"},
+            {text: "360° product image viewer via MagicToolbox module adjusted for use with Hyvä theme and images imported from Tecdoc API"},
             {text: "Export generation optimization: 18M records, exports of hundreds thousand rows reduced from 6-8h to 30-50min"},
             {text: "Integration with Tecdoc API for data enrichment"},
         ],
