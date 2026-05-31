@@ -14,6 +14,14 @@ type Post = {
 
 const posts: Post[] = [
     {
+        title: "The Rake case study",
+        excerpt: "A case study of our collaboration with The Rake — a globally recognized luxury fashion and lifestyle platform. We designed and implemented a scalable architecture that seamlessly integrates eCommerce and editorial coe.ntent, improving performance, simplifying content management, and supporting future growth. Discover how thoughtful architectural decisions and modern technology helped deliver a premium digital experience for a global luxury audienc\n",
+        source: "Hatimeria",
+        readingTime: "8 min",
+        date: "2020",
+        url: "https://www.hatimeria.com/our-work/the-rake",
+    },
+    {
         title: "Mastering queue usage in Magento 2: handling application state changes",
         excerpt:
             "Learn how to handle long-running queue consumers in Magento 2 and avoid issues caused by outdated in-memory application states. This article explains how Magento queues work, the risks of stale configuration and cached data, and how poison pill mechanisms can safely restart consumers to keep integrations reliable and up to date.",
