@@ -15,7 +15,7 @@ type Post = {
 const posts: Post[] = [
     {
         title: "The Rake case study",
-        excerpt: "A case study of our collaboration with The Rake — a globally recognized luxury fashion and lifestyle platform. We designed and implemented a scalable architecture that seamlessly integrates eCommerce and editorial coe.ntent, improving performance, simplifying content management, and supporting future growth. Discover how thoughtful architectural decisions and modern technology helped deliver a premium digital experience for a global luxury audienc",
+        excerpt: "A case study of our work with The Rake — a globally recognized luxury fashion and lifestyle platform. Discover how thoughtful architectural decisions and modern technology helped deliver a premium digital experience for a global luxury audience. I designed the backend architecture and led the Elasticsearch migration that replaced Algolia, cutting average search response time from ~900ms to ~300ms and reducing server response time by 65%.",
         source: "Hatimeria",
         readingTime: "8 min",
         date: "2020",
@@ -23,7 +23,7 @@ const posts: Post[] = [
     },
     {
         title: "Apple Pay - a way to increase your sales",
-        excerpt: "How do you turn a luxury shopping experience into a seamless one-tap purchase? We did it with adding Apple Pay into the store. It created a faster, smoother checkout experience. The result is a story about reducing friction, improving conversions, and rethinking how premium customers complete their purchases.",
+        excerpt: "How do you turn a luxury shopping experience into a seamless one-tap purchase? I implemented Apple Pay for The Rake's Magento 2 PWA — including a custom one-click checkout directly from the product page, bypassing the standard cart flow by working around Magento's session constraints. The result: 83% of Apple Pay orders came through this new path within weeks of launch.",
         source: "Hatimeria",
         readingTime: "7 min",
         date: "2022",
