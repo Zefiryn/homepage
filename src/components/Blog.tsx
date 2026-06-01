@@ -26,7 +26,7 @@ const posts: Post[] = [
         excerpt: "How do you turn a luxury shopping experience into a seamless one-tap purchase? I implemented Apple Pay for The Rake's Magento 2 PWA — including a custom one-click checkout directly from the product page, bypassing the standard cart flow by working around Magento's session constraints. The result: 83% of Apple Pay orders came through this new path within weeks of launch.",
         source: "Hatimeria",
         readingTime: "7 min",
-        date: "2022",
+        date: "2020",
         url: "https://www.hatimeria.com/our-work/apple-pay",
     },
     {
