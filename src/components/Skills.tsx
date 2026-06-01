@@ -31,6 +31,7 @@ const skillGroups: SkillGroup[] = [
             {name: "Laravel", years: 3},
             {name: "MongoDB / Redis", years: 3},
             {name: "Symfony", years: 1},
+            {name: "Akeneo", years: 1},
         ],
     },
     {
@@ -40,6 +41,7 @@ const skillGroups: SkillGroup[] = [
             {name: "Hyvä", years: 3},
             {name: "Alpine.js", years: 3},
             {name: "Vue", years: 3},
+            {name: "PWA", years: 3},
             {name: "SASS / Less", years: 3},
             {name: "TailwindCSS", years: 3},
             {name: "React", years: 2},
@@ -51,6 +53,7 @@ const toolTags: Tag[] = [
     {name: "Git"},
     {name: "Docker"},
     {name: "RabbitMQ"},
+    {name: "Varnish"},
     {name: "AWS Lambda"},
     {name: "Unit Testing"},
     {name: "Scrum"},
