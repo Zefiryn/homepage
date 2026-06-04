@@ -26,6 +26,9 @@ const audiowide = Audiowide({
 export const metadata: Metadata = {
   title: "Zefiryn",
   description: "Coding with Philosophy",
+  alternates: {
+    canonical: "https://portfolio.jewula.net"
+  }
 };
 
 export default async function RootLayout({
